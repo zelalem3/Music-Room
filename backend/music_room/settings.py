@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
      'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware'
 ]
 
 ROOT_URLCONF = 'music_room.urls'
@@ -125,3 +126,32 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+
+ALLOWED_HOSTS = [
+    'auditive-unsegmentally-karter.ngrok.io',
+    '127.0.0.1',
+    'localhost',
+    'auditive-unsegmentally-karter.ngrok-free.dev'
+]
+
+
+SESSION_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = "None"
+CSRF_COOKIE_SECURE = True
+
+
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # your React app
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://auditive-unsegmentally-karter.ngrok-free.dev",  # your backend
+    "http://localhost:5173",
+]
